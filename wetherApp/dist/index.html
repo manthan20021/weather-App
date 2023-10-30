@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="output.css">
+    <title>MyWeather</title>
+    <link rel="stylesheet" href="extra.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-[#20385D] w-[100%] h-[100%]">
+
+
+
+    <header >
+   <nav class="w-full h-[150px] bg-[#242424] px-5 py-7 flex  flex-col fixed top-0 left-0 right-0">
+    
+    <div class="flex items-center justify-between">
+            <img class="h-[50px] w-auto" src="/photos/Borcelle (1).gif" alt="">
+        <input class=" mx-2 w-[600px] h-[40px] p-4 bg-[#4A4A4A] rounded-full hidden md:block " type="text" placeholder="search">
+
+           <div class=" w-[80px] flex justify-between mr-1">
+            <i class="fa-solid fa-circle-user" style="color: #a3a3a3;"></i>
+            <i class="fa-solid fa-gear" style="color: #adadad;"></i>
+            <i class="fa-regular fa-bell" style="color: #b8b8b8;"></i>
+           </div>
+       
+    </div>
+<!-- navbar first div -->
+    <div class="w-full h-auto flex items-center justify-center mt-[30px]">
+    <div class="fixed left-5"><i class="fa-solid fa-bars" style="color: #9c9c9c;"></i></div>
+        <ul class="hidden md:flex justify-between text-white w-[500px]">
+            <li class="li">home</li>
+            <li class="li">about</li>
+            <li class="li">weather</li>
+            <li class="li">map</li>
+            <li class="li">today</li>
+            <li class="li">month</li>
+        </ul>
+    </div>
+<!--  second div -->
+   </nav>
+   <!-- nav bar compleat hear -->
+
+   <!-- nav 2 start form hear -->
+   <nav class="bg-[#325B8F] w-full md:h-[50px] px-5 py-2 flex flex-wrap justify-center items-center fixed top-[150px]">
+   <form action="">
+    <input class=" w-[230px] md:w-[300px] h-[24px] md:h-[35px] mb-2 bg-[#4A4A4A] pl-3 rounded-full text-[12px] text-white" type="text" name="text" id="locetion" placeholder="search for locetion">
+    <button type="submit" class=" h-[24px] md:h-[35px] bg-[#4A4A4A] text-white text-[12px] px-2 ml-3 mb-2 rounded-md">submit</button>
+   </form>
+    <div class="ml-[30px] w-[200px] flex  items-center">
+        <i class="fa-solid fa-house" style="color: #ffffff;"></i>
+        <samp class="text-white ml-2" id="cityhed2"></samp>
+        <span class="text-white ml-3 font-bold" id="tem-mini"></span>
+    </div>
+   </nav>
+   
+</header>
+
+<!-- header completed -->
+
+<main class="w-full h-auto bg-[#20385D] flex justify-center py-3 mt-[220px] pb-[50px]">
+   <div class="h-auto w-[80%] py-2 flex flex-col">
+
+    <div class="flex items-center">
+        <i class="fa-solid fa-house" style="color: #ffffff;"></i>
+    <h1 class=" text-white ml-2 font-bold" id="cityHeding"></h1>
+   </div>
+<!-- locetion heding -->
+  <div class=" flex items-center justify-between flex-wrap">
+
+    <!-- werther contenar start form here  -->
+    <div class=" h-auto md:h-[300px] w-auto md:w-[600px] bg-[#13213A] rounded-xl mt-3 flex flex-col flex-wrap px-[30px] py-3">
+
+
+        <div class="flex items-center justify-between flex-wrap mb-3">
+            <h6 class="text-white font-bold mb-3">Current weather
+                <br>
+            <span class="font-thin" id="time">7:44 PM</span></h6>
+    
+            <button class="text-white px-2 py-1 bg-[#334E75] rounded-md">Seeing different weather?</button>
+        </div>
+    
+        <div class="flex items-center flex-wrap mb-3">
+            <img id="icons"  class="sm:h-[80px] mr-2"  src="" alt="..">
+    
+            <h1 class="text-white text-[35px] sm:text-[65px]" id="tamp"><sup class=" text-[30px]"></sup></h1>
+    
+            <h4 class="text-white ml-7 font-bold" id="wether">
+                <br>
+               <span class="font-thin"></span></h4>
+           </div>
+        
+           <p class="text-white mb-3 text-[13px]" id="discription"></p>
+    
+           <div class="flex items-center justify-between flex-wrap">
+            
+    
+               <h5 class="text-white font-thin text-[13px] mr-[30px] md:mr-[5px]" id="Wind">
+                <br>
+            </h5>
+               <h5 class="text-white font-thin text-[13px] mr-[30px] md:mr-[5px]" id="Humidity">
+                <br>
+            </h5>  
+                <h5 class="text-white font-thin text-[13px] mr-[30px] md:mr-[5px]" id="visibility">
+                <br>
+            </h5>
+               <h5 class="text-white font-thin text-[13px] mr-[30px] md:mr-[5px]" id="pressure">
+                <br>
+              </h5>
+    
+           </div>
+       </div>
+    <!-- werther contenar -->
+    
+       <div class="md:w-[600px] md:h-[300px] w-auto rounded-xl overflow-hidden flex flex-wrap mt-3">
+        <img class="w-[600px] h-[300px]" src="https://tse3.mm.bing.net/th?id=OIP.G9e9wY1gn_IKEJHKkDGHUgHaFP&pid=Api&P=0&h=180" alt="">
+       </div>
+       <!-- map contenar -->
+
+  </div>
+  <!-- weather and map wraper -->
+
+<h4 class="text-white mt-3 mb-3 font-bold">5 DAY FORECAST</h4>
+
+<section class=" md:flex block items-center justify-between md:h-auto h-[300px] md:overflow-auto overflow-scroll ">
+
+    <div   class=" w-full mb-3  md:w-[200px] h-[100px]   bg-[#26508E] flex items-center justify-center md:flex-col rounded-lg">
+        <h6 class="text-white mb-1  pb-[2px] border-b-[1px] border-b-yellow-400" id="t1"></h6>
+
+        <div id="day1" class="flex items-center">
+            <img id="fi1" src="" alt="">
+            <h6 class="text-white font-bold ml-3" id="day1min" id="t1"></h6>
+        <h6  class="text-white font-bold ml-3" id="day1max"></h6>   
+     </div>
+    </div>
+
+    <div class="w-full mb-3  md:w-[200px] h-[100px]  bg-[#26508E] flex items-center justify-center md:flex-col rounded-lg md:ml-3">
+        <h6 class="text-white mb-1  pb-[2px] border-b-[1px] border-b-yellow-400" id="t2"></h6>
+       
+       <div id="day2" class="flex items-center">
+        <img id="fi2" src="" alt="">
+        <h6 class="text-white font-bold ml-3" id="day2min"></h6>
+                <h6 class="text-white font-bold ml-3" id="day2max"></h6>
+       </div>
+    </div>
+
+    <div class="w-full mb-3  md:w-[200px] h-[100px]  bg-[#26508E] flex items-center justify-center md:flex-col rounded-lg md:ml-3 ">
+        <h6 class="text-white mb-1  pb-[2px] border-b-[1px] border-b-yellow-400" id="t3"></h6>
+      
+        <div id="day3" class="flex items-center">
+            <img id="fi3" src="" alt="">
+        <h6 class="text-white font-bold ml-3" id="day3min"></h6>
+                <h6 class="text-white font-bold ml-3" id="day3max"></h6>
+       </div>
+    </div>
+
+    <div class="w-full mb-3  md:w-[200px] h-[100px]  bg-[#26508E] flex items-center justify-center md:flex-col rounded-lg md:ml-3">
+        <h6 class="text-white mb-1  pb-[2px] border-b-[1px] border-b-yellow-400" id="t4"></h6>
+      
+        <div id="day4" class="flex items-center">
+            <img id="fi4" src="" alt="">
+
+            <h6 class="text-white font-bold ml-3" id="day4min"></h6>
+                        <h6 class="text-white font-bold ml-3" id="day4max"></h6>
+           </div>
+    </div>
+
+    <div class="w-full mb-3  md:w-[200px] h-[100px]  bg-[#26508E] flex items-center justify-center md:flex-col rounded-lg md:ml-3">
+        <h6 class="text-white mb-1  pb-[2px] border-b-[1px] border-b-yellow-400" id="t5"></h6>
+     
+        <div id="day5" class="flex items-center">
+            <img id="fi5" src="" alt="">
+
+            <h6 class="text-white font-bold ml-3" id="day5min"></h6>
+                        <h6 class="text-white font-bold ml-3" id="day5max"></h6>
+           </div>
+    </div>
+
+
+
+
+</section>
+  <!-- 10 day forecast section  -->
+
+  <div class="bg-[#2A3C5B] h-auto w-full mt-8 rounded-xl overflow-hidden ">
+    <canvas id="weatherChart" width="400" height="200" style="background-color: #7fa3d2;"></canvas>
+  </div>
+  <!-- graf section -->
+   </div>
+   <!-- main-dive -->
+</main>
+
+<footer class="bg-[#232222] w-full h-auto p-[50px] md:flex items-center justify-between block">
+    <img class="md:[200px] h-[80px]" src="/photos/Borcelle (1).gif" alt="">
+    
+    <ul class="mt-[30px]">
+        <h1 class="text-yellow-500 font-bold border-b-2 border-x-yellow-500">Feathers</h1>
+        <li class="text-white font-thin">wether</li>
+        <li class="text-white font-thin">forecast</li>
+        <li class="text-white font-thin">temperature</li>
+        <li class="text-white font-thin">wether</li>
+    </ul>
+
+    <ul class="mt-[30px]">
+        <h1 class="text-yellow-500 font-bold border-b-2 border-x-yellow-500">Demo</h1>
+        <li class="text-white font-thin">wether</li>
+        <li class="text-white font-thin">forecast</li>
+        <li class="text-white font-thin">temperature</li>
+        <li class="text-white font-thin">wether</li>
+    </ul>
+
+    <ul class="mt-[30px]">
+        <h1 class="text-yellow-500 font-bold border-b-2 border-x-yellow-500">Demo</h1>
+        <li class="text-white font-thin">wether</li>
+        <li class="text-white font-thin">forecast</li>
+        <li class="text-white font-thin">temperature</li>
+        <li class="text-white font-thin">wether</li>
+    </ul>
+    
+</footer>
+
+
+<script src="app.js"></script>
+   <script src="https://kit.fontawesome.com/84cca0c0ef.js" crossorigin="anonymous"></script>
+
+   <!-- canvas-js links -->
+
+</body>
+</html>
